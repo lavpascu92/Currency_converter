@@ -1,0 +1,160 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Raleway:wght@200;300;400;500&display=swap");
+/* RESETS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  background-color: #121212;
+  color: #e1e1e1;
+  transition: all ease 0.4s;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
+.theme-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-family: inherit;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 24px;
+  background-color: #c38fff;
+  cursor: pointer;
+  color: #e1e1e1;
+  transition: all ease 0.4s;
+}
+
+.fas {
+  font-size: 1.5rem;
+}
+.fa-moon {
+  color: #e1e1e1;
+  background-color: #121212;
+}
+/* THEME CHANGE  WITH JS*/
+.light-theme-bg {
+  background-color: #e1e1e1;
+  color: #121212;
+}
+.light-theme-icon {
+  background-color: #121212;
+  color: #e1e1e1;
+}
+img {
+  text-align: center;
+  margin-top: 20px;
+  width: 120px;
+}
+
+h1 {
+  font-family: "Fugaz One", cursive;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 8px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.2rem;
+}
+
+.container {
+  background-color: #1f1f1f;
+  padding: 16px 28px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.btn {
+  color: #1f1f1f;
+  font-weight: 500;
+  background-color: #c38fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.15rem;
+  padding: 8px 32px;
+  transition: all ease 0.4s;
+}
+.btn:hover {
+  color: #e1e1e1;
+}
+.currency {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency select {
+  padding: 12px 64px 12px 12px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  font-size: 1rem;
+  color: #e1e1e1;
+  /*  You may not need these following lines. The arrow did not show for me on MacOS/Chrome so I added it. Just remove it if you would like  */
+  background: transparent;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-position: right 10px top 50%, 0, 0;
+  background-size: 12px auto, 100%;
+  background-repeat: no-repeat;
+  background-color: #1f1f1f;
+}
+
+.currency input {
+  border: 0;
+  background: transparent;
+  font-size: 30px;
+  text-align: right;
+  color: #c38fff;
+}
+
+.swap-rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rate {
+  color: #e1e1e1;
+  font-size: 14px;
+  padding: 0 10px;
+  letter-spacing: 0.2rem;
+}
+.current-date {
+  letter-spacing: 0.2rem;
+  margin-bottom: 20px;
+}
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+@media (max-width: 600px) {
+  .currency input {
+    width: 200px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  p,
+  .current-date {
+    font-size: 0.65rem;
+  }
+}
