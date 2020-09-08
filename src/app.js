@@ -42,15 +42,20 @@ async function getExchangeRate() {
     const currencyOne_value = currencyOneEl.value;
     const currencyTwo_value = currencyTwoEl.value;
     // Fetch data from API
-    let result = await fetch(`https://api.exchangeratesapi.io/latest?base=${currencyOne_value}`);
-    let data = await result.json();
-    // Get the current date and display on page
-    const current_date = data.date;
-    dateEl.innerHTML = `Date of exchange: ${current_date}`;
-    // Get the exchange rate
-    const exchangeRate = data.rates[currencyTwo_value];
-    // Display the exchange rate in div
-    exchangeRateEl.innerText = `1 ${currencyOne_value} = ${exchangeRate.toFixed(3)} ${currencyTwo_value}`;
-    // Calculate excange rate
-    amountTwoEl.value = (amountOneEl.value * exchangeRate).toFixed(3);
+    try {
+        let result = await fetch(`https://api.exchangeratesapi.io/latest?base=${currencyOne_value}`);
+        let data = await result.json();
+        // Get the current date and display on page
+        const current_date = data.date;
+        dateEl.innerHTML = `Date of exchange: ${current_date}`;
+        // Get the exchange rate
+        const exchangeRate = data.rates[currencyTwo_value];
+        // Display the exchange rate in div
+        exchangeRateEl.innerText = `1 ${currencyOne_value} = ${exchangeRate.toFixed(3)} ${currencyTwo_value}`;
+        // Calculate excange rate
+        amountTwoEl.value = (amountOneEl.value * exchangeRate).toFixed(3);
+    } catch (error) {
+        console.error(`Error: ${error}`);
+    }
+
 }
